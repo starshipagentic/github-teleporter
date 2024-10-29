@@ -1,0 +1,334 @@
+
+# 2024-10-26 13:33:45.398595
++y
+
+# 2024-10-26 13:34:00.621063
++create a script to read my file folder (asked for full path), ask me for the file or files that i want considered, go init a git hub project for me on my github account, and then upload / checkin the files for me.
+
+# 2024-10-26 13:34:30.628045
++y
+
+# 2024-10-26 13:34:34.351400
++/run python create_github_repo.py
+
+# 2024-10-26 13:35:29.557308
++if i enter a path with a filename, just determine the correct directory
+
+# 2024-10-26 13:44:24.395497
++if i hit enter with no input, you then need to lookup GITHUBKEY for the default.  let the user know this is the env var you will look for.  and if i hit enter on the dir path, assume this dir "."
+
+# 2024-10-26 14:07:35.669836
++fix this: 18: .aider.tags.cache.v3
++19: yaml8.py
++Enter the numbers of the files to include, separated by commas: 8,19,15
++Reinitialized existing Git repository in /Users/t/shiney-dev/syra/dialog-super-intent-builder/materials/.git/
++Enter the name for the GitHub repository: yaml-cleaner
++Enter your GitHub personal access token (or press Enter to use GITHUBKEY environment variable): 
++[main 2065393] Initial commit
++ 1 file changed, 89 insertions(+)
++ create mode 100644 README.md
++remote: Permission to starshipagentic/yaml-cleaner.git denied to tsomerville2.
++fatal: unable to access 'https://github.com/starshipagentic/yaml-cleaner/': The requested URL returned error: 403
++Repository created and files pushed to https://github.com/starshipagentic/yaml-cleaner
+
+# 2024-10-26 14:07:43.270886
++n
+
+# 2024-10-26 16:15:23.292823
++ah.. my github account might be logged in as someone else.  the token has plenty of permissions.  and i did select actual files, so fix all that
+
+# 2024-10-26 16:15:31.335594
++y
+
+# 2024-10-26 16:16:09.343102
++n
+
+# 2024-10-26 16:16:26.048928
++your code change wasn't linted correctly and you gave up.  try again
+
+# 2024-10-26 16:16:32.780975
++n
+
+# 2024-10-26 16:17:05.316226
++what changes are you trying to make ?  they keep failing.  somehow you're erasing all the code in a section, and then putting it back.  normally you do this in one diff step, so you are tripping up
+
+# 2024-10-26 16:17:22.531054
++y
+
+# 2024-10-26 16:17:52.673523
++chat only.  what changes did you finally make, how do i test it, and why do thosechanges matter
+
+# 2024-10-26 16:35:42.820485
++new set of errors.  must consider that the repo might already exist too.   and git might copmlain about the state of tracked files (which i don't know if it matters).  please ad more debugging print statements so i can give you greater feedback, and fix the code.  heres the results so far: 17: .vscode
++18: .aider.tags.cache.v3
++19: yaml8.py
++Enter the numbers of the files to include, separated by commas: 1,8,15,19
++Reinitialized existing Git repository in /Users/t/shiney-dev/syra/dialog-super-intent-builder/materials/.git/
++Enter your GitHub username: starshipagentic
++Enter your GitHub email: starshipagentic@gmail.com
++Enter the name for the GitHub repository: ssyamml 
++Enter your GitHub personal access token (or press Enter to use GITHUBKEY environment variable): 
++On branch main
++Untracked files:
++  (use "git add <file>..." to include in what will be committed)
++        .gitignore
++
++nothing added to commit but untracked files present (use "git add" to track)
++error: remote origin already exists.
++remote: Permission to starshipagentic/yaml-cleaner.git denied to tsomerville2.
++fatal: unable to access 'https://github.com/starshipagentic/yaml-cleaner/': The requested URL returned error: 403
++Repository created and files pushed to https://github.com/starshipagentic/ssyamml
+
+# 2024-10-26 16:35:57.515886
++y
+
+# 2024-10-26 16:39:07.064000
++{
+
+# 2024-10-26 16:39:17.354389
++new errors and print debugs show obvious rookie mistakes.
+
+# 2024-10-26 16:39:19.355767
++19: yaml8.py
++Enter the numbers of the files to include, separated by commas: 1,8,15,19
++Git init output: Reinitialized existing Git repository in /Users/t/shiney-dev/syra/dialog-super-intent-builder/materials/.git/
++ 
++Enter your GitHub username: starshipagentic
++Enter your GitHub email: starshipagentic@gmail.com
++Enter the name for the GitHub repository: ssyaml
++Enter your GitHub personal access token (or press Enter to use GITHUBKEY environment variable): 
++Adding file: yaml-heuristic.md
++Adding file: README.md
++Adding file: yaml_test_cases.py
++Adding file: yaml8.py
++Git commit output: On branch main
++Untracked files:
++  (use "git add <file>..." to include in what will be committed)
++        .gitignore
++
++nothing added to commit but untracked files present (use "git add" to track)
++ 
++Remote origin already exists.
++remote: Permission to starshipagentic/yaml-cleaner.git denied to tsomerville2.
++fatal: unable to access 'https://github.com/starshipagentic/yaml-cleaner/': The requested URL returned error: 403
++Repository created and files pushed to https://github.com/starshipagentic/ssyaml
+
+# 2024-10-26 16:39:20.766544
++---
+
+# 2024-10-26 16:39:46.461836
++notice 'tsomerville2' ?  that's not the username i entered in the prompts.  i entered startshipagentic, which should have been used.
+
+# 2024-10-26 16:40:10.779706
++notice the permission errors?  that's the same issue, you're using the wrong username.  
+
+# 2024-10-26 16:40:57.347715
++notice fatal: unable to access 'https://github.com/starshipagentic/yaml-cleaner/': The requested URL returned 
++error: 403 ?  that's because at one point i tried with that repo name, and then it failed, so i tried another repo name "ssyaml".  so why do we have both there?  is this stored in local git??
+
+# 2024-10-26 16:41:11.188273
++please fix - as you are very smart and think things through.
+
+# 2024-10-26 16:41:11.844929
++}
+
+# 2024-10-26 16:41:15.196845
++y
+
+# 2024-10-26 16:42:52.187577
++notice this error:19: yaml8.py
++Enter the numbers of the files to include, separated by commas: 1,8,15,19
++Git init output: Reinitialized existing Git repository in /Users/t/shiney-dev/syra/dialog-super-intent-builder/materials/.git/
++ 
++Enter your GitHub username: starshipagentic
++Enter your GitHub email: starshipagentic@gmail.com
++Set Git user.name output:  
++Set Git user.email output:  
++Enter the name for the GitHub repository: ssyaml
++Enter your GitHub personal access token (or press Enter to use GITHUBKEY environment variable): 
++Repository already exists on GitHub.
++Adding file: yaml-heuristic.md
++Adding file: README.md
++Adding file: yaml_test_cases.py
++Adding file: yaml8.py
++Git commit output: On branch main
++Untracked files:
++  (use "git add <file>..." to include in what will be committed)
++        .gitignore
++
++nothing added to commit but untracked files present (use "git add" to track)
++ 
++Git remote add output:  
++remote: Not Found
++fatal: repository 'https://github.com/ssyaml/' not found
++Repository created and files pushed to https://github.com/ssyaml
+
+# 2024-10-26 16:42:58.706935
++{
+
+# 2024-10-26 16:43:02.534419
++notice this error:
+
+# 2024-10-26 16:43:03.438616
++19: yaml8.py
++Enter the numbers of the files to include, separated by commas: 1,8,15,19
++Git init output: Reinitialized existing Git repository in /Users/t/shiney-dev/syra/dialog-super-intent-builder/materials/.git/
++ 
++Enter your GitHub username: starshipagentic
++Enter your GitHub email: starshipagentic@gmail.com
++Set Git user.name output:  
++Set Git user.email output:  
++Enter the name for the GitHub repository: ssyaml
++Enter your GitHub personal access token (or press Enter to use GITHUBKEY environment variable): 
++Repository already exists on GitHub.
++Adding file: yaml-heuristic.md
++Adding file: README.md
++Adding file: yaml_test_cases.py
++Adding file: yaml8.py
++Git commit output: On branch main
++Untracked files:
++  (use "git add <file>..." to include in what will be committed)
++        .gitignore
++
++nothing added to commit but untracked files present (use "git add" to track)
++ 
++Git remote add output:  
++remote: Not Found
++fatal: repository 'https://github.com/ssyaml/' not found
++Repository created and files pushed to https://github.com/ssyaml
+
+# 2024-10-26 16:43:04.778895
++---
+
+# 2024-10-26 16:43:16.515192
++the correct url for the repo is https://github.com/starshipagentic/ssyaml
+
+# 2024-10-26 16:43:26.562141
++but you used fatal: repository 'https://github.com/ssyaml/' 
+
+# 2024-10-26 16:43:29.235416
++please fix
+
+# 2024-10-26 16:43:29.698516
++}
+
+# 2024-10-26 16:43:32.813743
++n
+
+# 2024-10-26 16:43:34.876633
++y
+
+# 2024-10-26 16:43:48.623976
++n
+
+# 2024-10-26 16:43:56.503214
++y
+
+# 2024-10-26 16:46:04.146056
++chat only - don't code in your response.  can you show me and prove the list of git commans you're trying to do?   
+
+# 2024-10-26 16:48:09.228616
++chat only.  are you doing this command?  git remote add origin https://github.com/starshipagentic/ssyaml.git      \n that's what git says to do when making a new repo.  and here are specific instrcutions for an existing repo (which you should be looking out for as well):  …or push an existing repository from the command line
++git remote add origin https://github.com/starshipagentic/ssyaml.git
++git branch -M main
++git push -u origin main
+
+# 2024-10-26 16:48:12.743234
++n
+
+# 2024-10-26 16:48:45.485844
++i want you to fix the actual code, not fire off git commands here
+
+# 2024-10-26 16:50:52.844947
++you have to fix this username thing.  just setting it is not enough.  somehow you have to issue a better command.  Git remote add output:  
++remote: Permission to starshipagentic/ssyaml.git denied to tsomerville2.
+
+# 2024-10-26 16:51:40.228433
++and i want you to start remembering the last username and email i typed.  and when i just hit enter, those will be used.  show me what they are when you['re prompting me as well.
+
+# 2024-10-26 16:51:50.769713
++y
+
+# 2024-10-26 17:15:39.801319
++it checked in a bunch of other files, that were in my folder and in git.  but when i'm doing this type of thing, when the prompt asks which files to upload to the new repo, i only want those files.  please fix this for future 
+
+# 2024-10-26 18:14:24.147964
++{you need to copy my selected files to ~/starship/githubteleporter and then 2) 
+
+# 2024-10-26 18:16:25.621410
++create that folder and subfolder if it doesn't exist.  in fact, always delete that subfolder or ensure it is empty 3) copy the selected files over to there 4) create needed steps for local git repo in that githubteleporter subfolder and do it at that exact level 5) do all the right steps using that githubteleporter subfolder to do your work.  and in step 2 make sure there is not github anything before you copy stuff over 
+
+# 2024-10-26 18:16:27.122744
++}
+
+# 2024-10-26 18:50:58.777218
++/ls
+
+# 2024-10-26 18:52:02.845419
++let's give the users a choice between MIT, Apache2.0, and BSD 3 Clause. . with the default of MIT if they just hit enter
+
+# 2024-10-26 18:52:13.555899
++y
+
+# 2024-10-26 18:52:59.771539
++n
+
+# 2024-10-26 18:53:38.800309
++don't strain yourself with lint errors - you're not doing well.  make the code change first, then creaate separate files somewhere for each license.
+
+# 2024-10-26 18:53:53.071264
++y
+
+# 2024-10-26 18:54:08.016167
++n
+
+# 2024-10-26 18:55:16.824391
++/ls
+
+# 2024-10-26 18:56:19.437319
++now is the code up to date for using these licenses, and also copying over the correct one and adding it to the list of files i chose before loading to git?
+
+# 2024-10-26 18:56:31.607242
++y
+
+# 2024-10-26 18:59:22.559252
++remember, i'm running the full path to the create_github_repo.py.  so lets go ahead and just put those licenses into the create_github_repo.py so it's portable.
+
+# 2024-10-26 19:45:59.952207
++you forgot to create the . files i selected.  like i choose ".aider.chat.history.md" and it didn't make it up to the repo.  why?
+
+# 2024-10-26 19:48:15.407532
++/undo
+
+# 2024-10-26 19:49:15.342390
++i undid your change.  i was wrong, the . files already work fine
+
+# 2024-10-28 21:21:24.191385
++/git add create_github_repo.py
+
+# 2024-10-28 21:21:29.162745
++/add create_github_repo.py
+
+# 2024-10-28 21:21:39.694803
++make a README.md for this
+
+# 2024-10-28 21:21:51.856324
++y
+
+# 2024-10-28 21:22:25.436990
++n
+
+# 2024-10-28 21:23:52.645658
++redo to README.md because i renamed it to github-teleporter
+
+# 2024-10-28 21:23:54.733609
++y
+
+# 2024-10-28 21:24:05.175693
++n
+
+# 2024-10-28 21:24:08.235232
++y
+
+# 2024-10-28 21:24:14.234004
++n
