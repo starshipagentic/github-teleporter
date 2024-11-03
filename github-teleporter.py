@@ -132,14 +132,15 @@ def main():
     files = list_files(directory)
     selected_files = select_files(files)
     target_directory = os.path.expanduser("~/starship/githubteleporter")
-    # Choose a license
-    license_choice = input("Choose a license (MIT, Apache 2.0, BSD 3-Clause) [MIT]: ") or "MIT"
-    create_license_file(target_directory, license_choice)
 
     # Ensure the target directory exists and is empty
     if os.path.exists(target_directory):
         shutil.rmtree(target_directory)
     os.makedirs(target_directory)
+
+    # Choose a license and create license file
+    license_choice = input("Choose a license (MIT, Apache 2.0, BSD 3-Clause) [MIT]: ") or "MIT"
+    create_license_file(target_directory, license_choice)
 
     # Copy selected files to the target directory
     for file in selected_files:
